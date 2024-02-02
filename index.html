@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <p>Type a number: <input id="number" type="number"> <button onclick="getResult()"><b>Klik di sini!</b></button></p>
+    <hr>
+    <div class="result"></div>
+    <script>
+        function getResult() {
+            const input = document.getElementById("number").value;
+            const paragraph = document.createElement("p");
+            const result = document.getElementsByClassName("result")[0];
+            
+            if(input == 0){
+                paragraph.innerHTML = "Invalid input!";
+                paragraph.style.color = "red";
+            } else {
+                if (input % 3 == 0 && input % 5 == 0) {
+                    paragraph.innerHTML = "FizzBuzz!";
+                } else if (input % 3 == 0) {
+                    paragraph.innerHTML = "Fizz!";
+                } else if (input % 5 == 0) {
+                    paragraph.innerHTML = "Buzz!";
+                } else {
+                    paragraph.innerHTML = input;
+                }
+            }
+
+            result.appendChild(paragraph);
+        }
+    </script>
+</body>
+</html>
